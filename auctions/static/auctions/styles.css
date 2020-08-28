@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 10px;
+    text-align: center;
+}
+
+hr{
+    margin: 5px auto;
+    width: 300px;
+
+}
+
+#comment{
+    background-color: lightgreen;
+    width: 300px;
+    margin: 5px auto;
+}
+
+#message{
+    background-color: aqua;
+    width: 300px;
+    margin: 5px auto;
+}
+button{
+    margin: 3px;
+}
+
+#items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.item{
+    margin: 10px;
+    padding: 5px;
+    border: lightgreen solid 2px;
+}
+
+img{
+    margin: 3px;
+}
+
+h2{
+    text-align: center;
+}
+
+form{
+    width: 400px;
+    margin: 0 auto;
+}
+
+input{
+    margin: 2px;
+}
+
+.navbar-logo {
+    width: 90px;
+  }
+
+ul{
+    list-style-type: none;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: darkgreen;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: darkgreen;
+  }
+

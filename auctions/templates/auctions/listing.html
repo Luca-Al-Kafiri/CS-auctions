@@ -1,0 +1,74 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if i.closed and request.user.username == winner.user %}
+    <h2>You won</h2>
+    {% elif i.closed and request.user.username != winner.user %}
+    <h1>Closed</h1>
+    {% endif %}
+
+
+    {% if not i.closed %}
+    <h2>{{ i.title }} details</h2>
+    {% if message %}
+    <div id="message">
+    {{message}}
+    </div>
+    {% endif %}
+    <div>
+    <ul>
+        <li>Owner: {{i.user}}</li>
+        <li>Category: {{i.category}}</li>
+        <li>Description: {{i.description}}</li>
+        <li>Current Price: $ {{i.price}}</li>
+        <li>Posted: {{i.time}}</li>
+    </ul>
+    <img src="{{ i.link }}" style="width: 250px"> 
+    </div>
+    {% if user.is_authenticated %}
+    <hr>
+    <form action="{% url 'watch' i.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Add to watchlist</button>
+    </form>
+    <hr>
+    {% endif %}
+    
+    {% if user.is_authenticated %}
+    {% if not closed %}
+    <h5>Bids</h5>
+    <form action="{% url 'bid' i.id %}" method="POST">
+        {% csrf_token %}
+    <div></div>
+    <input type="number" name='bid'>
+    </div>
+    <div></div>
+    <button type="submit" class="btn btn-success">Bid</button>  
+    </div>
+    </form>
+    {% endif %}
+    {% endif %}
+    <hr>
+    <h5>Comments</h5>
+    {% for z in c %}
+        <div id="comment">{{z.user}}: {{z}}</div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <form action="{% url 'comment' i.id %}" method="POST">
+        {% csrf_token %}
+    <div>
+    <input type="text" name='content'>
+    </div>
+    <div>
+    <button type="submit" class="btn btn-success">Comment</button>
+    </div>
+    </form>
+    {% endif %}
+    {% if request.user.username == i.user %}
+        <form action="{% url 'listing' i.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Close</button>
+        </form>
+    {% endif %}
+    {% endif%}
+{% endblock %}
