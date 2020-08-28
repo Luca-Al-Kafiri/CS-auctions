@@ -1,0 +1,7 @@
+Django==3.0.8
+gunicorn==20.0.4
+psycopg2-binary==2.8.5
+python-apt==2.0.0+ubuntu0.20.4.1
+python-dateutil==2.7.3
+python-debian===0.1.36ubuntu1
+pythondialog==3.5.1

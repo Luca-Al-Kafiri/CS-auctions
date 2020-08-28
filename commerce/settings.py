@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9go148orlt4v0',
+        'HOST' : 'ec2-3-215-207-12.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'gwbefgrixwagwi',
+        'PASSWORD': '74c5ec9f48fa1aac4809c181872be4cd34faa7f761476d7864287ef87d7f140b'
     }
 }
+
 
 AUTH_USER_MODEL = 'auctions.User'
 
@@ -120,3 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
