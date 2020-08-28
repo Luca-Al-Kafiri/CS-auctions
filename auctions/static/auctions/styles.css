@@ -41,6 +41,7 @@ button{
     margin: 10px;
     padding: 5px;
     border: lightgreen solid 2px;
+    width: 60%;
 }
 
 img{
