@@ -14,7 +14,7 @@ class Listing(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     category = models.CharField(max_length=64)
-    link = models.CharField(max_length=350, default=image)
+    link = models.CharField(max_length=350, default=image())
     time = models.DateTimeField()
     closed = models.BooleanField(default=False)
     watch = models.ManyToManyField(User, blank=True, related_name='watch')
