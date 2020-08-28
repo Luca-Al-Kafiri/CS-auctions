@@ -19,8 +19,8 @@
     </div>
      <a href="{% url 'listing' x.id %}"><img src="{{ x.link }}" style="width:250px"></a>
      <ul>
-         <li>Description: {{x.description}}</li>
-         <li>Current price: $ {{x.price}}</li>
+         <li><strong>Description</strong>: {{x.description}}</li>
+         <li><strong>Current price</strong>: $ {{x.price}}</li>
      </ul>
     {% endif %}
     </div>

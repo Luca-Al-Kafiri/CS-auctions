@@ -4,7 +4,7 @@
     {% if i.closed and request.user.username == winner.user %}
     <h2>You won</h2>
     {% elif i.closed and request.user.username != winner.user %}
-    <h1>Closed</h1>
+    <h2>Closed</h2>
     {% endif %}
 
 
@@ -17,11 +17,11 @@
     {% endif %}
     <div>
     <ul>
-        <li>Owner: {{i.user}}</li>
-        <li>Category: {{i.category}}</li>
-        <li>Description: {{i.description}}</li>
-        <li>Current Price: $ {{i.price}}</li>
-        <li>Posted: {{i.time}}</li>
+        <li><strong>Owner</strong>: {{i.user}}</li>
+        <li><strong>Category</strong>: {{i.category}}</li>
+        <li><strong>Description</strong>: {{i.description}}</li>
+        <li><strong>Current Price</strong>: $ {{i.price}}</li>
+        <li><strong>Posted</strong>: {{i.time}}</li>
     </ul>
     <img src="{{ i.link }}" style="width: 250px"> 
     </div>
