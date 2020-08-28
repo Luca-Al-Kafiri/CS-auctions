@@ -21,6 +21,10 @@ hr{
     margin: 5px auto;
 }
 
+#title{
+    font-family: 'Lobster', cursive;
+}
+
 #message{
     background-color: aqua;
     width: 300px;
