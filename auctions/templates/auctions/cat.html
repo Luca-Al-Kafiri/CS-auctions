@@ -4,18 +4,28 @@
     <h2>Active Listings</h2>
 
         <div id="items">
-        {% for x in items %}
-        <div class="item">
-        <div>
-        <a href="{% url 'listing' x.id %}">{{x.title}}</a>
-        </div>
-        <a href="{% url 'listing' x.id %}"><img src="{{ x.link }}" style="width: 250px"> </a>
-        <ul> 
-            <li><strong>Description</strong>: {{x.description}}</li>
-            <li><strong>Current price</strong>: {{x.price}}</li>
-        </ul>
-        </div>
-        {% endfor %}
+            {% for x in items %}
+            <div class='item'>
+            {% if x.closed %}
+            <div>
+            <a href="{% url 'listing' x.id %}">{{x}}</a>
+            </div> 
+            <a href="{% url 'listing' x.id %}"><img src="{{ x.link }}" style="width:250px"></a>
+            <ul>
+                <li>Closed</li>
+            </ul>
+            {% else %}
+            <div>
+             <a href="{% url 'listing' x.id %}">{{x}}</a> 
+            </div>
+             <a href="{% url 'listing' x.id %}"><img src="{{ x.link }}" style="width:250px"></a>
+             <ul>
+                 <li><strong>Description</strong>: {{x.description}}</li>
+                 <li><strong>Current price</strong>: $ {{x.price}}</li>
+             </ul>
+            {% endif %}
+            </div>
+            {% endfor %}
         </div>
     
     
