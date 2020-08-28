@@ -34,7 +34,8 @@ def create(request):
         new_listing.description = request.POST.get('description')
         new_listing.price = request.POST.get('price')
         new_listing.category = request.POST.get('category')
-        new_listing.link = request.POST.get('link')
+        if request.POST.get('link'):
+            new_listing.link = request.POST.get('link')
         new_listing.time = datetime.datetime.now()
         new_listing.save()
         return redirect('listing', id=new_listing.id)
