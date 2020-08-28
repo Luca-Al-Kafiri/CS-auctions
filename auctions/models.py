@@ -7,7 +7,7 @@ class User(AbstractUser):
 
 class Listing(models.Model):
     def image():
-        return f'https://www.thebluediamondgallery.com/wooden-tile/images/auction.jpg'
+        return 'https://www.thebluediamondgallery.com/wooden-tile/images/auction.jpg'
 
     user = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
