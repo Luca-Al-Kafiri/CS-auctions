@@ -2,8 +2,9 @@
 
 {% block body %}
     <h2>Watchlist</h2>
-
+    <div id="items">
     {% for x in items %}
+    <div class='item'>
     <div>
      <a href="{% url 'listing' x.id %}">{{x}}</a> 
     </div>
@@ -19,5 +20,7 @@
          {% csrf_token %}
          <input type="submit" class="btn btn-danger" value="Remove">
      </form>
+    </div>
     {% endfor %}
+    </div>
 {% endblock %}
