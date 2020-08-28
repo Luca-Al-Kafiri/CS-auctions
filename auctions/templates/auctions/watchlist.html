@@ -11,8 +11,8 @@
     </div>
     <div>
      <ul>
-         <li>Description: {{x.description}}</li>
-         <li>Current price: $ {{x.price}}</li>
+         <li><strong>Description</strong>: {{x.description}}</li>
+         <li><strong>Current price</strong>: $ {{x.price}}</li>
      </ul>
     </div>
      <form action="{% url 'remove' x.id %}" method="POST">
