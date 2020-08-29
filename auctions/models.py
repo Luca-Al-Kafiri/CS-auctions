@@ -11,7 +11,7 @@ class Listing(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     category = models.CharField(max_length=64)
-    link = models.CharField(max_length=350, default='https://www.thebluediamondgallery.com/wooden-tile/images/auction.jpg')
+    link = models.CharField(max_length=350, default='/static/auctions/images/auction.jpg')
     time = models.DateTimeField()
     closed = models.BooleanField(default=False)
     watch = models.ManyToManyField(User, blank=True, related_name='watch')
